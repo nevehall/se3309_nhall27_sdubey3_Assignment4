@@ -11,6 +11,7 @@ if (isset($_GET["customerEmail"])) {
   
     $customerEmail = $_GET["customerEmail"];
     $sql = "DELETE FROM Customer WHERE customerEmail = :customerEmail";
+    $sql = "DELETE FROM Transactions WHERE customerEmail = :customerEmail";
     $statement = $connection->prepare($sql);
     $statement->bindValue(':customerEmail', $customerEmail);
     $statement->execute();
