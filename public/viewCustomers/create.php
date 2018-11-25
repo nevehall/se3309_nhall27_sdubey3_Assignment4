@@ -7,7 +7,6 @@
  *
  */
 if (isset($_POST['submit'])) {
-    //require "../connect.php";
     require "../../config.php";
     require "../../common.php";
     try  {

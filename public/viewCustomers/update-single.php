@@ -4,8 +4,8 @@
  * users table.
  *
  */
-require "../config.php";
-require "../common.php";
+require "../../config.php";
+require "../../common.php";
 if (isset($_POST['submit'])) {
     if(!function_exists('hash_equals')){
         function hash_equals($str1, $str2){
@@ -71,7 +71,7 @@ if (isset($_GET['customerEmail'])) {
 }
 ?>
 
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 
 <?php if (isset($_POST['submit']) && $statement) : ?>
 	<blockquote><?php echo escape($_POST['fname']); ?> successfully updated.</blockquote>
@@ -88,7 +88,7 @@ if (isset($_GET['customerEmail'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="update.php">Back to Update</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>
 
