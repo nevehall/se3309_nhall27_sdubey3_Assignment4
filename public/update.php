@@ -1,7 +1,7 @@
 <?php require "templates/header.php"; ?>
 <?php
 /**
- * List all users with a link to edit
+ * List all customers with a link to edit
  */
 require "../config.php";
 require "../common.php";
@@ -33,11 +33,11 @@ try {
     <?php foreach ($result as $row) : ?>
         <tr>
             <td><?php echo escape($row["customerEmail"]); ?></td>
-                <td><?php echo escape($row["fname"]); ?></td>
-                <td><?php echo escape($row["lname"]); ?></td>
-                <td><?php echo escape($row["customerPhone"]); ?></td>
-                <td><?php echo escape($row["height"]); ?></td>
-                <td><?php echo escape($row["weight"]); ?></td>
+            <td><?php echo escape($row["fname"]); ?></td>
+            <td><?php echo escape($row["lname"]); ?></td>
+            <td><?php echo escape($row["customerPhone"]); ?></td>
+            <td><?php echo escape($row["height"]); ?></td>
+            <td><?php echo escape($row["weight"]); ?></td>
             <td><a href="update-single.php?customerEmail=<?php echo escape($row["customerEmail"]); ?>">Edit</a></td>
         </tr>
     <?php endforeach; ?>
