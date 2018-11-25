@@ -1,10 +1,10 @@
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 <?php
 /**
  * List all customers with a link to edit
  */
-require "../config.php";
-require "../common.php";
+require "../../config.php";
+require "../../common.php";
 try {
   $connection = new PDO($dsn, $username, $password, $options);
   $sql = "SELECT * FROM Customer";
@@ -17,6 +17,7 @@ try {
 ?>
         
 <h2>Update customers</h2>
+<a href="../viewCustomers.php">Back to Customer Info</a>
 
 <table>
     <thead>
@@ -44,6 +45,4 @@ try {
     </tbody>
 </table>
 
-<a href="index.php">Back to home</a>
-
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>

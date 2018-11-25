@@ -1,10 +1,10 @@
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 <?php
 /**
  * Delete a user
  */
-require "../config.php";
-require "../common.php";
+require "../../config.php";
+require "../../common.php";
 if (isset($_GET["customerEmail"])) {
   try {
     $connection = new PDO($dsn, $username, $password, $options);
@@ -32,6 +32,8 @@ try {
 ?>
         
 <h2>Delete users</h2>
+<a href="../viewCustomers.php">Back to Customer Info</a>
+
 
 <?php if ($success) echo $success; ?>
 
@@ -61,6 +63,5 @@ try {
   </tbody>
 </table>
 
-<a href="index.php">Back to home</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>

@@ -1,4 +1,4 @@
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 
 <?php
 /**
@@ -8,8 +8,8 @@
  */
 if (isset($_POST['submit'])) {
     //require "../connect.php";
-    require "../config.php";
-    require "../common.php";
+    require "../../config.php";
+    require "../../common.php";
     try  {
         $connection = new PDO($dsn, $username, $password, $options);
         
@@ -66,6 +66,6 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Submit">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="../viewCustomers.php">Back to Customer Info</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>
