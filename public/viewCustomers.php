@@ -7,7 +7,7 @@ require "../config.php";
 require "../common.php";
 try {
   $connection = new PDO($dsn, $username, $password, $options);
-  $sql = "SELECT * FROM Product";
+  $sql = "SELECT * FROM Customer";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $result = $statement->fetchAll();
@@ -19,10 +19,10 @@ try {
 <h2>Select a Product to View</h2>
 
 <ul>
-	<li><a href="./views/ski.php"><strong>Ski</strong></li>
-	<li><a href="./views/snowboard.php"><strong>Snowboard</strong></a></li>
-	<li><a href="./views/helmet.php"><strong>Helmet</strong></a></li>
-	<li><a href="./views/boots.php"><strong>Boots</strong></a></li>
+	<li><a href="./viewCustomers/create.php"><strong>Create</strong></a> - add a customer</li>
+	<li><a href="./viewCustomers/search.php"><strong>Search</strong></a> - find a customer</li>
+	<li><a href="./viewCustomers/update.php"><strong>Update</strong></a> - update a customer</li>
+	<li><a href="./viewCustomers/delete.php"><strong>Delete</strong></a> - delete a customer</li>
 </ul>
 
 

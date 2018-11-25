@@ -8,7 +8,7 @@
 
 	<title>Hall Dubs Ski Shop</title>
 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../../public/css/style.css">
 </head>
 
 <body>

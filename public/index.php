@@ -2,11 +2,9 @@
 
 <ul>
 	<li><a href="./login/login.php"><strong>Logout</strong>
-	<li><a href="create.php"><strong>Create</strong></a> - add a customer</li>
-	<li><a href="search.php"><strong>Search</strong></a> - find a customer</li>
-	<li><a href="update.php"><strong>Update</strong></a> - update a customer</li>
-	<li><a href="delete.php"><strong>Delete</strong></a> - delete a customer</li>
-	<li><a href="view.php"><strong>View Products</strong></a></li>
+	<li><a href="viewProducts.php"><strong>Product Info</strong></a></li>
+	<li><a href="viewProducts.php"><strong>Customer Info</strong></a></li>
+	
 </ul>
 
 <?php include "templates/footer.php"; ?>
