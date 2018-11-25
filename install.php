@@ -4,7 +4,7 @@
  * new database and table with structure.
  *
  */
-//require "connect.php";
+
 require "config.php";
 try {
     $connection = new PDO("mysql:host=$host", $username, $password, $options);

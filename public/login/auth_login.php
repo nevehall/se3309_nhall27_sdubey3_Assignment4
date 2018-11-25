@@ -1,17 +1,19 @@
 <?php  
 require "../../config.php";
-require "../../common.php";
 
-if (isset($_POST['username']) and isset($_POST['password'])){
+if (isset($_POST['username']) and isset($_POST['pass'])){
 	
     // Assigning POST values to variables.
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $pass = $_POST['pass'];
     
     // CHECK FOR THE RECORD FROM TABLE
-    $mysql = "SELECT serviceProviderID FROM c9.CellProviderCompany WHERE username='$username' and password='$password'";
+    $mysql = "SELECT employeeNo FROM c9.Employee WHERE username='$username' and pass='$pass'";
+    
      
     $result = mysqli_query($db, $mysql) or die(mysqli_error($db));
+    
+    echo '<script>console.log($mysql)</script>';
     $count = mysqli_num_rows($result);
     
 //STILL NEED TO: show valid/invalid pop-up
@@ -20,7 +22,7 @@ if (isset($_POST['username']) and isset($_POST['password'])){
     if ($count == 1){
     
         //echo "Login Credentials verified";
-        header("Location: public/index.php");
+        header("Location: ../index.php");
         echo "<script type='text/javascript'>alert('Login Credentials verified')</script>";
     
     }else{
@@ -29,4 +31,4 @@ if (isset($_POST['username']) and isset($_POST['password'])){
        header("Location: login.php");
     }
 };
-?>
+?> 

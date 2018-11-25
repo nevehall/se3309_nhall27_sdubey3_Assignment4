@@ -13,3 +13,10 @@ th {
 	padding: 5px;
 	border-bottom: 1px solid #aaa;
 }
+
+#login-form{  
+	border: 3 px; 
+	padding:9px 9px;
+	width:300px; 
+	border-radius:5px; 
+}

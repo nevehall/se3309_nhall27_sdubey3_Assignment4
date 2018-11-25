@@ -15,8 +15,8 @@
                 <td><input type="text" name="username" id="username"></td>
             </tr>
             <tr>
-                <td><label for="password">Password</label></td>
-                <td><input type="password" name="password" id="password"></input></td>
+                <td><label for="pass">Password</label></td>
+                <td><input type="password" name="pass" id="pass"></input></td>
             </tr>
 			
             <tr>
