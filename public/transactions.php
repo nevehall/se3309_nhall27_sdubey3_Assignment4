@@ -21,7 +21,7 @@ try {
 <ul>
 	<li><a href="./transactions/processTransaction.php"><strong>Process a Transaction</strong></a></li>
 	<li><a href="./transactions/transactionHistory.php"><strong>View Store Transation History</strong></a></li>
-	<li><a href="./transactions/employeeTransRecord.php"><strong>View Store Transation History</strong></a></li>
+	<li><a href="./transactions/employeeTransRecord.php"><strong>View Employee Transaction Record</strong></a></li>
 
 </ul>
 

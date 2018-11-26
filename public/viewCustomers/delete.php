@@ -5,13 +5,14 @@
  */
 require "../../config.php";
 require "../../common.php";
-if (isset($_GET["customerEmail"])) {
+if (isset($_GET["customerEmail"])){ 
   try {
     $connection = new PDO($dsn, $username, $password, $options);
   
     $customerEmail = $_GET["customerEmail"];
-    $sql = "DELETE FROM Customer WHERE customerEmail = :customerEmail";
-    $sql = "DELETE FROM Transactions WHERE customerEmail = :customerEmail";
+    $sql ="DELETE 
+            FROM Customer
+            WHERE customerEmail = :customerEmail";
     $statement = $connection->prepare($sql);
     $statement->bindValue(':customerEmail', $customerEmail);
     $statement->execute();
@@ -22,7 +23,7 @@ if (isset($_GET["customerEmail"])) {
 }
 try {
   $connection = new PDO($dsn, $username, $password, $options);
-  $sql = "SELECT * FROM Customer";
+  $sql ="SELECT * FROM Customer";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $result = $statement->fetchAll();
