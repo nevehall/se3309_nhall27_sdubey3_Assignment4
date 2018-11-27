@@ -24,7 +24,7 @@
     }
 
 ?>
-
+<a href="../transactions.php">Back to Transactions</a>
 <table>
     <thead>
         <tr>

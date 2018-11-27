@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
         $connection = new PDO($dsn, $username, $password, $options);
         
         $new_transaction = array(
-            "transactionID" => $_POST['transactionID'],
+            //"transactionID" => $_POST['SET transactionID = SELECT RAND()*(100000000-999999999)+100000000'],
             "employeeNo" => $_POST['employeeNo'],
             "time"  => $_POST['time'],
             "date" => $_POST['date'],
@@ -41,14 +41,19 @@ if (isset($_POST['submit'])) {
 <h2>Process a Transaction</h2>
 
 <form method="post">
-    <label for="transactionID">Transaction ID: </label>
-    <input type="text" name="transactionID" id="transactionID">
-    
+   
     <label for="employeeNo">Provide your employeeNo: </label>
     <input type="text" name="employeeNo" id="employeeNo">
     
     <label for="customerEmail">Customer Email: </label>
     <input type="text" name="customerEmail" id="customerEmail">
+    
+    <label for="total">Total: </label>
+    <input type="text" name="total" id="total">
+    
+    
+    
+    
     
     <input type="submit" name="submit" value="Submit">
 </form>
