@@ -4,6 +4,7 @@
 
 <ul>
 	<li><a href="./ski.php"><strong>View All Ski</strong></li>
+	<li><a href="./skiBrands.php"><strong>View Skis in Specific Brands</strong></li>
 	<li><a href="./filterSki.php"><strong>Find Your Ski Size</strong></a></li>
 </ul>
 

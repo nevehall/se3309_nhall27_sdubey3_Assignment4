@@ -2,7 +2,7 @@
 
 <?php
 /**
- * View the number of products sold from each brand in the past year.
+ * View the number of snowboards in each brand.
  *
  */
     try  {
@@ -11,12 +11,9 @@
         require "../../common.php";
         $connection = new PDO($dsn, $username, $password, $options);
         $sql = "SELECT b.brandName, COUNT(*)
-                    FROM Transactions t, Product p, Item i, Brand b
-                    WHERE t.transactionID = i.transactionID 
-                        AND i.productNo = p.productNo 
-                        AND p.brandID = b.brandID
-                        AND t.transDate > '2018-01-01'
-                    GROUP BY b.brandName";
+                    FROM Snowboard s, Product p, Brand b
+                    WHERE s.productNo = p.productNo AND p.brandID = b.brandID
+                    GROUP BY brandName";
         $statement = $connection->prepare($sql);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -25,9 +22,8 @@
     }
 ?>
         
-<h2>Brand Statistics - in the year 2018</h2>
-<p>Below displays the number of items sold in each brand in the past year.</p>
-<a href="../viewProducts.php">Back to views</a>
+<h2>Snowboard Inventory in each Brand</h2>
+<a href="./snowboardInfo.php">Back to Snowboard Info</a>
 
 <table>
     <thead>

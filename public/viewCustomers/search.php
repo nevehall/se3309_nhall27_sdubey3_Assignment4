@@ -3,7 +3,7 @@
 <?php
 /**
  * Function to query information based on 
- * a parameter: in this case, location.
+ * a parameter: in this case, customerEmail.
  *
  */
 if (isset($_POST['submit'])) {
