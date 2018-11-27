@@ -72,15 +72,15 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['submitTotal'])) {
     try  {
         
-        //require "../../config.php";
-        //require "../../common.php";
+        require "../../config.php";
+        require "../../common.php";
         $connection = new PDO($dsn, $username, $password, $options);
-        $sql = "SELECT customerEmail, SUM(total) AS grandTotal
-                    FROM Transactions 
-                    GROUP BY grandTotal";
-        $grandTotal = $_POST['grandTotal'];
+        $sql = "SELECT t.customerEmail, SUM(total) AS grandTotal
+                    FROM Customer c, Transactions t
+                    WHERE c.customerEmail = t.customerEmail
+                    GROUP BY t.customerEmail";
+        $customerEmail = $_POST['customerEmail'];
         $statement = $connection->prepare($sql);
-        $statement->bindParam(':grandTotal', $grandTotal, PDO::PARAM_STR);
         $statement->execute();
         $result = $statement->fetchAll();
     } catch(PDOException $error) {
@@ -95,12 +95,14 @@ if (isset($_POST['submitTotal'])) {
         <table>
             <thead>
                 <tr>
+                    <th>Customer</th>
                     <th>Grand Total</th>
                 </tr>
             </thead>
             <tbody>
         <?php foreach ($result as $row) { ?>
             <tr>
+                <td><?php echo escape($row["customerEmail"]); ?></td>
                 <td><?php echo escape($row["grandTotal"]); ?></td>
             </tr>
         <?php } ?>
