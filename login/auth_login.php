@@ -1,5 +1,5 @@
 <?php  
-require "../../config.php";
+require "../config.php";
 
 if (isset($_POST['username']) and isset($_POST['pass'])){
 	
@@ -22,7 +22,7 @@ if (isset($_POST['username']) and isset($_POST['pass'])){
     if ($count == 1){
     
         //echo "Login Credentials verified";
-        header("Location: ../index.php");
+        header("Location: ../public/index.php");
         echo "<script type='text/javascript'>alert('Login Credentials verified')</script>";
     
     }else{

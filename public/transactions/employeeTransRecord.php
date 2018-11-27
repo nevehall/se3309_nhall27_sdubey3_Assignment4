@@ -2,8 +2,7 @@
 
 <?php
 /**
- * Function to query information based on 
- * a parameter: in this case, location.
+ * View Employee Transaction history
  *
  */
 if (isset($_POST['submit'])) {

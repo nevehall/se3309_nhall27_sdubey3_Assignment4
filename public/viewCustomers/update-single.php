@@ -1,7 +1,7 @@
 <?php
 /**
  * Use an HTML form to edit an entry in the
- * users table.
+ * customers table.
  *
  */
 require "../../config.php";
