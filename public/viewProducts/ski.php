@@ -19,7 +19,7 @@ try {
 ?>
 
 <h2>Skis</h2>
-<a href="../viewProducts.php">Back to views</a>
+<a href="../viewProducts/skiInfo.php">Back to Ski Info</a>
 
 <table>
     <thead>

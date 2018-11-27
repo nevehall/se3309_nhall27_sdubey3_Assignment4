@@ -45,8 +45,8 @@ try {
         <th>First Name</th>
         <th>Last Name</th>
         <th>Customer Phone</th>
-        <th>Height</th>
-        <th>Weight</th>
+        <th>Height (cm)</th>
+        <th>Weight (lbs)</th>
     </tr>
   </thead>
   <tbody>

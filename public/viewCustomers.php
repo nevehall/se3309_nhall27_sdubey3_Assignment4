@@ -1,22 +1,6 @@
 <?php require "templates/header.php"; ?>
-<?php
-/**
- * List the products available to vieww
- */
-require "../config.php";
-require "../common.php";
-try {
-  $connection = new PDO($dsn, $username, $password, $options);
-  $sql = "SELECT * FROM Customer";
-  $statement = $connection->prepare($sql);
-  $statement->execute();
-  $result = $statement->fetchAll();
-} catch(PDOException $error) {
-  echo $sql . "<br>" . $error->getMessage();
-}
-?>
         
-<h2>Select a Product to View</h2>
+<h2>Customer Info</h2>
 
 <ul>
 	<li><a href="./viewCustomers/create.php"><strong>Create</strong></a> - add a customer</li>
