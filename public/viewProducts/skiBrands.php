@@ -24,6 +24,8 @@
         
 <h2>Ski Inventory in each Brand</h2>
 <a href="./skiInfo.php">Back to Ski Info</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <table>
     <thead>

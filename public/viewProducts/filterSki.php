@@ -65,5 +65,6 @@ if (isset($_POST['submit'])) {
 </form>
 
 <a href="./skiInfo.php">Back to Ski Info</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <?php require "../templates/footer.php"; ?>

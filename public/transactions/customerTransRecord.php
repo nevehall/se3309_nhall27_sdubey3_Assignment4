@@ -120,6 +120,8 @@ if (isset($_POST['submitTotal'])) {
 
 
 <h2>Find Customer Transaction History</h2>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <form method="post">
     <label for="customerEmail">Customer Email </label>

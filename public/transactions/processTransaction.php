@@ -9,10 +9,10 @@ if (isset($_POST['submit'])) {
         $connection = new PDO($dsn, $username, $password, $options);
         
         $new_transaction = array(
-            //"transactionID" => $_POST['SET transactionID = SELECT RAND()*(100000000-999999999)+100000000'],
+            "transactionID" => $_POST['SET transactionID = SELECT RAND()*(100000000-999999999)+100000000'],
             "employeeNo" => $_POST['employeeNo'],
-            "time"  => $_POST['time'],
-            "date" => $_POST['date'],
+            "time"  => $_POST['CURRENT_TIME()'],
+            "date" => $_POST['CURRENT_DATE()'],
             "total" => $_POST['total'],
             "customerEmail" => $_POST['customerEmail']
             
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         $sql = sprintf(
                 "INSERT INTO %s (%s) values (%s)",
                 "Transactions",
-                "SET transactionID = SELECT RAND()*(100000000-999999999)+100000000;",
+                //"SET transactionID = SELECT RAND()*(100000000-999999999)+100000000;",
                 implode(", ", array_keys($new_transaction)),
                 ":" . implode(", :", array_keys($new_transaction))
                 
@@ -50,8 +50,6 @@ if (isset($_POST['submit'])) {
     
     <label for="total">Total: </label>
     <input type="text" name="total" id="total">
-    
-    
     
     
     

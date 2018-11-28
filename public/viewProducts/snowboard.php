@@ -44,6 +44,7 @@ try {
     <?php endforeach; ?>
     </tbody>
 </table>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 
 <?php require "../templates/footer.php"; ?>

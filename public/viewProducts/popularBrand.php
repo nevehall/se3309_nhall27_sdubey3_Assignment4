@@ -29,6 +29,9 @@
 <p>Below displays the number of items sold in each brand in the past year.</p>
 <a href="../viewProducts.php">Back to views</a>
 
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
 <table>
     <thead>
         <tr>

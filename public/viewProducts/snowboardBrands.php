@@ -24,6 +24,8 @@
         
 <h2>Snowboard Inventory in each Brand</h2>
 <a href="./snowboardInfo.php">Back to Snowboard Info</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <table>
     <thead>

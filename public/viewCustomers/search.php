@@ -68,6 +68,8 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="View Results">
 </form>
 
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 <a href="../viewCustomers.php">Back to Customer Info</a>
 
 <?php require "../templates/footer.php"; ?>

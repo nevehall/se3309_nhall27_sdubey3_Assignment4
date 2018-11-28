@@ -18,6 +18,8 @@ try {
 }
 ?>
 
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 <h2>Skis</h2>
 <a href="../viewProducts/skiInfo.php">Back to Ski Info</a>
 

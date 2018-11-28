@@ -10,5 +10,7 @@
 
 
 <a href="../viewProducts.php">Back to products</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <?php require "../templates/footer.php"; ?>

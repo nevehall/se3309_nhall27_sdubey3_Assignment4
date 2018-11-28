@@ -1,11 +1,41 @@
 <?php include "templates/header.php"; ?>
 
-<ul>
-	<li><a href="../login/login.php"><strong>Logout</strong>
-	<li><a href="viewProducts.php"><strong>Product Info</strong></a></li>
-	<li><a href="viewCustomers.php"><strong>Customer Info</strong></a></li>
-	<li><a href="transactions.php"><strong>Transactions</strong></a></li>
-	
-</ul>
+<div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <a href="../login/login.php">LOGOUT</a>
+</div>
+    
+<div class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4><a href="viewProducts.php">PRODUCT INFO</a></h4>
+    </div>
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4><a href="viewCustomers.php">CUSTOMER INFO</a></h4>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4><a href="transactions.php">TRANSACTIONS</a<</h4>
+    </div>
+    <div class="col-sm-6">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4><a href="employees.php">NEW EMPLOYEE</a></h4>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+
 
 <?php include "templates/footer.php"; ?>

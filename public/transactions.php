@@ -14,5 +14,7 @@
 
 
 <a href="index.php">Back to home</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <?php require "templates/footer.php"; ?>

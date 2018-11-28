@@ -3,7 +3,7 @@
 <?php
 /**
  * Use an HTML form to create a new entry in the
- * customers table.
+ * employees table.
  *
  */
 if (isset($_POST['submit'])) {
@@ -13,18 +13,18 @@ if (isset($_POST['submit'])) {
         $connection = new PDO($dsn, $username, $password, $options);
         
         $new_customer = array(
-            "customerEmail" => $_POST['customerEmail'],
+            "employeeNo" => $_POST['employeeNo'],
+            "username" => $_POST['username'],
+            "pass"  => $_POST['pass'],
             "fname" => $_POST['fname'],
-            "lname"  => $_POST['lname'],
-            "customerPhone" => $_POST['customerPhone'],
-            "height" => $_POST['height'],
-            "weight" => $_POST['weight']
+            "lname" => $_POST['lname'],
+            "employeePhone" => $_POST['employeePhone']
             
             
         );
         $sql = sprintf(
                 "INSERT INTO %s (%s) values (%s)",
-                "Customer",
+                "Employee",
                 implode(", ", array_keys($new_customer)),
                 ":" . implode(", :", array_keys($new_customer))
         );
@@ -40,12 +40,20 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <h2>Add a Customer</h2>
 
 <form method="post">
-    <label for="customerEmail">Customer Email: </label>
-    <input type="text" name="customerEmail" id="customerEmail">
+    <label for="employeeNo">Employee Number: </label>
+    <input type="text" name="employeeNo" id="employeeNo">
+    
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username">
+    
+    <label for="pass">Password: </label>
+    <input type="text" name="pass" id="pass">
     
     <label for="fname">First Name: </label>
     <input type="text" name="fname" id="fname">
@@ -53,20 +61,14 @@ if (isset($_POST['submit'])) {
     <label for="lname">Last Name: </label>
     <input type="text" name="lname" id="lname">
     
-    <label for="customerPhone">Customer Phone: </label>
-    <input type="text" name="customerPhone" id="customerPhone">
-    
-    <label for="height">Height: </label>
-    <input type="text" name="height" id="height">
-    
-    <label for="weight">Weight: </label>
-    <input type="text" name="weight" id="weight">
+    <label for="employeePhone">Customer Phone: </label>
+    <input type="text" name="employeePhone" id="employeePhone">
     
     <input type="submit" name="submit" value="Submit">
 </form>
 
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-<a href="../viewCustomers.php">Back to Customer Info</a>
+<a href="../employees.php">Back to Employee Info</a>
 
 <?php require "../templates/footer.php"; ?>

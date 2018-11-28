@@ -21,6 +21,8 @@ try {
         
 <h2>Store Transaction History</h2>
 <a href="../transactions.php">Back to Transactions</a>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
 <table>
     <thead>
