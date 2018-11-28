@@ -13,12 +13,16 @@ if (isset($_POST['submit'])) {
         require "../../config.php";
         require "../../common.php";
         $connection = new PDO($dsn, $username, $password, $options);
-        $sql = "SELECT customerEmail c.weight, c.height, s.length,  
-                        FROM Customer c, Ski s
-                        WHERE c.customerEmail = :c.customerEmail";
+        $sql = "SELECT customerEmail, height, s.length, s.difficultyRank
+                FROM Customer c, Ski s
+                WHERE customerEmail = :customerEmail
+                ORDER BY CASE WHEN s.length > c.height THEN difficultyRank = 1 END DESC
+                        ,CASE WHEN s.length = c.height THEN difficultyRank = 2 END DESC
+                        ,CASE WHEN s.length < c.height THEN difficultyRank = 3 END;
+                GO";
         $customerEmail = $_POST['customerEmail'];
         $statement = $connection->prepare($sql);
-        $statement->bindParam(':c.customerEmail', $customerEmail, PDO::PARAM_STR);
+        $statement->bindParam(':customerEmail', $customerEmail, PDO::PARAM_STR);
         $statement->execute();
         $result = $statement->fetchAll();
     } catch(PDOException $error) {
@@ -37,7 +41,8 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <th>Customer Email</th>
                     <th>Height</th>
-                    <th>Weight</th>
+                    <th>Ski Length</th>
+                    <th>Difficulty Rank</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,14 +50,14 @@ if (isset($_POST['submit'])) {
             <tr>
                 <td><?php echo escape($row["customerEmail"]); ?></td>
                 <td><?php echo escape($row["height"]); ?></td>
-                <td><?php echo escape($row["weight"]); ?></td>
-                
+                <td><?php echo escape($row["length"]); ?></td>
+                <td><?php echo escape($row["difficultyRank"]); ?></td>
             </tr>
         <?php } ?>
         </tbody>
     </table>
     <?php } else { ?>
-        <blockquote>No results found for <?php echo escape($_POST['c.customerEmail']); ?>.</blockquote>
+        <blockquote>No results found for <?php echo escape($_POST['customerEmail']); ?>.</blockquote>
     <?php } 
 } ?> 
 

@@ -20,9 +20,9 @@ if (isset($_POST['username']) and isset($_POST['pass'])){
 
     } else{
         ?>
-        <blockquote><?php echo $_POST['username']; ?>does not exist in the database.</blockquote>
+        <blockquote>Incorrect username or password.</blockquote>
         <?php
-       header("Location: login.php");
+       //header("Location: login.php");
     }
 }
 ?>

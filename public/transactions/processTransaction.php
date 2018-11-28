@@ -41,6 +41,8 @@ if (isset($_POST['submit'])) {
 <h2>Process a Transaction</h2>
 
 <form method="post">
+    
+    <label>Transaction number is<?php echo escape($_POST['transactionID']); ?></label>
    
     <label for="employeeNo">Provide your employeeNo: </label>
     <input type="text" name="employeeNo" id="employeeNo">
