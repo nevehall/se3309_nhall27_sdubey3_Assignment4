@@ -1,6 +1,6 @@
 <?php require "templates/header.php"; ?>
         
-<h2>Customer Info</h2>
+<h2>Customer Information</h2>
 
 <ul>
 	<li><a href="./viewCustomers/create.php"><strong>Create</strong></a> - add a customer</li>

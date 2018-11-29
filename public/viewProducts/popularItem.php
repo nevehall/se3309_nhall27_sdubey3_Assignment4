@@ -10,18 +10,7 @@
         require "../../config.php";
         require "../../common.php";
         $connection = new PDO($dsn, $username, $password, $options);
-        $sql = /*"SELECT s.productNo, w.productNo, h.productNo, b.productNo, 
-                COUNT(s.productNo), COUNT(w.productNo), COUNT(h.productNo), COUNT(b.productNo)
-                    FROM Transactions t, Product p, Item i, Ski s, Snowboard w, 
-                        Helmet h, Boots b
-                    WHERE t.transactionID = i.transactionID
-                    AND i.productNo = p.productNo
-                    AND p.productNo = s.productNo
-                    AND p.productNo = w.productNo
-                    AND p.productNo = h.productNo
-                    AND p.productNo = b.productNo
-                GROUP BY s.productNo, w.productNo, h.productNo, b.productNo";*/
-                "(SELECT COUNT(s.productNo)
+        $sql = "(SELECT COUNT(s.productNo)
                 FROM Transactions t, Item i, Product p, Ski s
                 WHERE t.transactionID = i.transactionID 
                 	AND i.productNo = p.productNo 
