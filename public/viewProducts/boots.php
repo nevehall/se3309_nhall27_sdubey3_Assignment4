@@ -7,9 +7,13 @@ require "../../config.php";
 require "../../common.php";
 try {
   $connection = new PDO($dsn, $username, $password, $options);
-  $sql = "SELECT b.productNo, p.size, p.price, r.brandName
-        FROM Boots b, Product p, Brand r
-        WHERE p.productNo = b.productNo AND r.brandID = p.brandID";
+  $sql = "SELECT p.size, p.price, r.brandName, p.productNo
+        FROM Product p, Brand r
+        WHERE EXISTS(
+            SELECT b.productNo
+            FROM Boots b
+            WHERE b.productNo = p.productNo 
+                AND r.brandID = p.brandID)";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $result = $statement->fetchAll();

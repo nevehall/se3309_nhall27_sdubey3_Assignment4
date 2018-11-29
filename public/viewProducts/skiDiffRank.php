@@ -3,17 +3,18 @@
 <?php require "../templates/header.php"; ?>
 <?php
 /**
- * List all skis available at the store
+ * Search ski difficulty rank.
  */
 require "../../config.php";
 require "../../common.php";
 if (isset($_POST['submit'])) {
     try {
             $connection = new PDO($dsn, $username, $password, $options);
-            $sql ="SELECT *
-                        FROM Ski
-                        WHERE difficultyRank = :difficultyRank";
-
+            $sql ="SELECT s.difficultyRank, s.length, b.brandName, p.productNo
+                        FROM Ski s, Product p, Brand b
+                        WHERE difficultyRank = :difficultyRank
+                        AND s.productNo = p.productNo
+                        AND p.brandID = b.brandID";
             $difficultyRank = $_POST['difficultyRank'];
             $statement = $connection->prepare($sql);
             $statement->bindParam(':difficultyRank', $difficultyRank, PDO::PARAM_STR);
@@ -35,7 +36,7 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <th>Ski No</th>
                     <th>Length</th>
-                    <th>Level of Difficulty</th>
+                    <th>Brand</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +44,7 @@ if (isset($_POST['submit'])) {
             <tr>
                 <td><?php echo escape($row["productNo"]); ?></td>
                 <td><?php echo escape($row["length"]); ?></td>
-                <td><?php echo escape($row["difficultyRank"]); ?></td>
+                <td><?php echo escape($row["brandName"]); ?></td>
             </tr>
         <?php } ?>
         </tbody>

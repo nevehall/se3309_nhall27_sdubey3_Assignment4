@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
         <table>
             <thead>
                 <tr>
-                    <th>Ski No</th>
+                    <th>Snowboard No</th>
                     <th>Length</th>
                     <th>Level of Difficulty</th>
                 </tr>
@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
     <?php } 
 } ?> 
 
-<h2>Find ski based on difficultyRank</h2>
+<h2>Find snowboard based on difficultyRank</h2>
 
 <form method="post">
     <label for="difficultyRank">Difficulty Rank (1,2,3): </label>

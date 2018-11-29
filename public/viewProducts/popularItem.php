@@ -16,21 +16,21 @@
                 	AND i.productNo = p.productNo 
                     AND p.productNo = s.productNo
                     AND t.transDate > '2018-01-01')
-                UNION 
+                UNION ALL
                 (SELECT COUNT(w.productNo)
                 FROM Transactions t, Item i, Product p, Snowboard w
                 WHERE t.transactionID = i.transactionID 
                 	AND i.productNo = p.productNo 
                     AND p.productNo = w.productNo
                     AND t.transDate > '2018-01-01')
-                UNION
+                UNION ALL
                 (SELECT COUNT(h.productNo)
                 FROM Transactions t, Item i, Product p, Helmet h
                 WHERE t.transactionID = i.transactionID 
                 	AND i.productNo = p.productNo 
                     AND p.productNo = h.productNo
                     AND t.transDate > '2018-01-01')
-                UNION
+                UNION ALL
                 (SELECT COUNT(b.productNo)
                 FROM Transactions t, Item i, Product p, Boots b
                 WHERE t.transactionID = i.transactionID 
@@ -63,15 +63,10 @@
         </tr>
     </thead>
     <tbody>
-    <?php foreach ($result as $row) : 
-            echo "<tr>";
-            for($col = 0; $col < 4; $col ++) { 
-            echo "<td>"; echo escape($row["COUNT(s.productNo)"]); echo "</td>";
-            echo "<td>"; echo escape($row["COUNT(w.productNo)"]); echo "</td>";
-            echo "<td>"; echo escape($row["COUNT(h.productNo)"]); echo "</td>";
-            echo "<td>"; echo escape($row["COUNT(b.productNo)"]); echo "</td>";
-            }
-            echo "</tr>"; ?>
+    <?php foreach ($result as $col) : 
+            echo "<td>"; echo escape($col[0]); echo "</td>";
+            
+             ?>
     <?php endforeach; ?>
     </tbody>
 </table>
