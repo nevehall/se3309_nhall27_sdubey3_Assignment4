@@ -10,26 +10,20 @@
   <h4>What we offer</h4>
   <br>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
       <h4><a href="viewProducts.php">PRODUCT INFO</a></h4>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
       <h4><a href="viewCustomers.php">CUSTOMER INFO</a></h4>
     </div>
-  </div>
-  <br><br>
-  <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <span class="glyphicon glyphicon-leaf logo-small"></span>
       <h4><a href="transactions.php">TRANSACTIONS</a<</h4>
     </div>
-    <div class="col-sm-6">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4><a href="employees.php">NEW EMPLOYEE</a></h4>
-    </div>
   </div>
+  <br><br>
 </div>
 
 </body>

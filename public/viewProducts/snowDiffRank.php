@@ -35,7 +35,6 @@ if (isset($_POST['submit'])) {
                 <tr>
                     <th>Snowboard No</th>
                     <th>Length</th>
-                    <th>Level of Difficulty</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +42,6 @@ if (isset($_POST['submit'])) {
             <tr>
                 <td><?php echo escape($row["productNo"]); ?></td>
                 <td><?php echo escape($row["length"]); ?></td>
-                <td><?php echo escape($row["difficultyRank"]); ?></td>
             </tr>
         <?php } ?>
         </tbody>
